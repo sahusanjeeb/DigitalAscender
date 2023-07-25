@@ -1,0 +1,61 @@
+@import '@collab/comp-library/style/settings/color';
+@import '@collab/comp-library/style/mixins/flexbox';
+@import '@collab/comp-library/style/mixins/common';
+
+ul {
+  @include flex-direction(column);
+  margin-top: 10px;
+
+  li.nav__linkItem {
+    height: 3rem;
+    padding: 0px 0px 0px 1.25rem;
+    @include flexbox;
+    align-items: center;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+      color: $nav-text-active;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    &:hover, &--active {
+      background-color: $nav-link-active-bg;
+      @include box-shadow(4px, 0, 0, $nav-link-active-highlight, true);
+      @include transition(all, 0.3s);
+    }
+
+    &--disabled {
+      pointer-events:none;
+      color: $dark-3 !important;
+    }
+
+    .nav-icon {
+      color: $nav-text-active;
+      margin-right: 10px;
+    }
+  }
+}
+
+
+.nav__menu--toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 23px 25px 0px 0px;
+  cursor: pointer;
+}
+
+.icon-disabled {
+  color: $dark-3 !important;
+}

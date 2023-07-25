@@ -1,0 +1,120 @@
+//@import '../../style/settings/fonts';
+
+@mixin color-modifiers {
+  @each $color,
+  $hex in $colors {
+    &--#{$color} {
+      color: $hex;
+    }
+  }
+}
+
+@mixin text-modifiers {
+  @each $type,
+  $weight in $textWeight {
+    &--#{$type} {
+      font-weight: $weight;
+    }
+  }
+}
+
+//@mixin text-size-modifiers {
+//  @each $type,
+//  $size in $textSize {
+//    &__#{$type} {
+//      font-size: $size;
+//    }
+//  }
+//}
+
+
+%ava-text-defaults-heading {
+  //color:$usb-dark-blue;
+  font-family: $font-regular, $font-fallback;
+}
+
+%ava-text-defaults-body {
+  //color:$usb-grey;
+  font-family: $font-regular, $font-fallback;
+}
+
+%ava-text-defaults-link {
+  //color:$usb-grey;
+  font-family: $font-regular, $font-fallback;
+}
+
+@function starts-with($string, $find) {
+  @return str-slice($string, 1, 1) == $find;
+}
+
+//* For each key in the map, created an own class *//
+
+
+@mixin ava-font($font-map) {
+  @each $name, $value in $font-map {
+    //$i: index($font-map, ($name $value));
+    $k: map-keys($font-map);
+    $n: str-slice($name, 1, 1);
+    $i: $i+1;
+
+
+    @if str-slice($name, 1,1)=='h' {
+      #{$name}, .text__#{$name} {
+        @extend %ava-text-defaults-heading;
+      }
+    }
+    @if str-slice($name, 1,4)=='body' {
+      .text__#{$name} {
+        @extend %ava-text-defaults-body;
+      }
+    }
+    //     @if str-slice($name, 1,4)=='link' {
+    //     .usb-text--#{$name} {
+    //         @extend %ava-text-defaults-link;
+
+    //     }
+    // }
+
+    @if $i <= 4 {
+      #{$name}, .text__#{$name} {
+        font-size: $value;
+        margin-bottom: 8px;
+        // line-height: $value*1.25;
+      }
+    }
+    @if $i == 5 {
+      p, #{$name}, .text__#{$name} {
+        font-size: $value;
+        margin-bottom: 8px;
+        // line-height: $value*1.25;
+      }
+    }
+
+    // @if $i >=3 and $i <=5 {
+    //     .usb-text--#{$name} {
+    //     font-size: $value;
+    //     //line-height:$value+($usb-base-space*0.4);
+    //     }
+    // }
+    @if $i >5 {
+      .text__#{$name} {
+        font-size: $value;
+        line-height: $value*1.25;
+      }
+    }
+  }
+}
+
+@include ava-font($ava-font-map);
+
+
+//* Font Helper classes *//
+
+.text {
+  @include color-modifiers;
+  @include text-modifiers;
+
+  &--italic {
+    font-style: italic;
+  }
+}

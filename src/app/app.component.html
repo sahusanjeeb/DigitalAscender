@@ -1,0 +1,20 @@
+<div class="container">
+    <app-header></app-header>
+
+    <div class="container__mainContentWrapper" >
+        <nav [ngClass]="{'collapsed':!showExpandedNav}" *ngIf="router.url !== '/login'">
+          <app-navbar [items]="navbarItems" (toggleNav)="showExpandedNav = !showExpandedNav"></app-navbar>
+        </nav>
+        <div class="column main-content">
+          <!-- <app-breadcrumb *ngIf="!!breadcrumbs" [breadcrumbConfig]="breadcrumbs"></app-breadcrumb> -->
+          <div class="column container__mainContent">
+            <div role="main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+</div>
+
+

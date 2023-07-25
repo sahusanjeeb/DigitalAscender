@@ -1,0 +1,199 @@
+@use "sass:math";
+
+@import '@collab/comp-library/style/settings/screenBreakpoints';
+@import '@collab/comp-library/style/settings/grid';
+@import '@collab/comp-library/style/mixins/flexbox';
+
+//Define branding
+$brand: collab;
+
+$justify-content: start,
+end,
+center,
+around,
+between;
+
+$align-content: start,
+end,
+center,
+around,
+between,
+stretch;
+
+$align-items: start,
+end,
+center,
+baseline,
+stretch;
+
+
+$flexboxgrid-max-width: 1200px !default;
+
+//
+// -- Stop editing -- //
+//
+
+@mixin col {
+  width: 100%;
+  padding-right: $flexboxgrid-gutter-width;
+  padding-left: $flexboxgrid-gutter-width;
+}
+
+%col {
+  @include col;
+}
+
+
+.container {
+  // width: 100%;
+  margin: 0 auto;
+  padding-right: $flexboxgrid-outer-margin;
+  padding-left: $flexboxgrid-outer-margin;
+
+  &-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $flexboxgrid-outer-margin;
+    padding-left: $flexboxgrid-outer-margin;
+  }
+}
+
+.row {
+  @include flexbox();
+  @include flex(0, 1, auto);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  margin-right: -$flexboxgrid-outer-margin;
+  margin-left: -$flexboxgrid-outer-margin;
+}
+
+.col {
+  @extend %col;
+  @include flex-grow(1);
+  @include flex-basis(0);
+  max-width: 100%;
+}
+
+.row.nowrap {
+  @include flex-wrap(nowrap);
+}
+
+.row.reverse {
+  @include flex-direction(row-reverse);
+}
+
+.col.reverse {
+  @include flex-direction(column-reverse);
+}
+
+
+@for $i from 1 through $flexboxgrid-grid-columns {
+  .col--#{$i} {
+    @include flex(0 0 math.div(100% , $flexboxgrid-grid-columns) * $i);
+    max-width: math.div(100% , $flexboxgrid-grid-columns) * $i;
+  }
+
+  @each $breakpoint in $screen-breakpoints {
+    $name: nth($breakpoint, 1);
+
+    .col--#{$name},
+    .col--#{$name}-#{$i} {
+      @extend %col;
+    }
+  }
+
+}
+
+@for $i from 0 through $flexboxgrid-grid-columns {
+  .col--offset-#{$i} {
+    @if $i==0 {
+      margin-left: 0;
+    } @else {
+      margin-left: math.div(100% , $flexboxgrid-grid-columns) * $i;
+    }
+  }
+
+  .col--order-#{$i} {
+    order: #{$i};
+  }
+}
+
+.col--order-first {
+  order: -1;
+}
+
+.col--order-last {
+  order: 13;
+}
+
+@each $content in $justify-content {
+  .container--justify-content-#{$content} {
+    @if $content==center {
+      @include justify-content(#{$content});
+    } @else if $content==around or $content==between {
+      @include justify-content(space-#{$content});
+    } @else {
+      @include justify-content(flex-#{$content});
+    }
+  }
+}
+
+@each $content in $align-content {
+  .container--align-content-#{$content} {
+    @if $content==center or $content==stretch {
+      @include align-content(#{$content});
+    } @else if $content==around or $content==between {
+      @include align-content(space-#{$content});
+    } @else {
+      @include align-content(flex-#{$content});
+    }
+  }
+}
+
+@each $content in $align-items {
+  .container--align-items-#{$content} {
+    @if $content==center or $content==stretch or $content==baseline {
+      @include align-items(#{$content});
+    } @else if $content==around or $content==between {
+      @include align-items(space-#{$content});
+    } @else {
+      @include align-items(flex-#{$content});
+    }
+  }
+
+  .container--align-self-#{$content} {
+    @if $content==center or $content==stretch or $content==baseline {
+      @include align-self(#{$content});
+    } @else if $content==around or $content==between {
+      @include align-self(space-#{$content});
+    } @else {
+      @include align-self(flex-#{$content});
+    }
+  }
+}
+
+@each $breakpoint in $screen-breakpoints {
+  $name: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+  $container: nth($breakpoint, 3);
+
+  @media only screen and (min-width: $size) {
+    .container {
+      max-width: $container;
+    }
+
+    .col--#{$name} {
+      @include col;
+      @include flex-grow(1);
+      @include flex-basis(0);
+      max-width: 100%;
+    }
+
+    @for $i from 1 through $flexboxgrid-grid-columns {
+      .col--#{$name}-#{$i} {
+        @include flex(0 0 math.div(100% , $flexboxgrid-grid-columns) * $i);
+        max-width: math.div(100% , $flexboxgrid-grid-columns) * $i;
+      }
+    }
+  }
+}

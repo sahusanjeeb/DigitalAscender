@@ -1,0 +1,82 @@
+$gray-dark: rgb(232, 232, 232);
+
+// Missing from old color.scss
+$accordion-border: $gray-dark;
+
+// Adding new color family
+
+$gray-1: rgb(34, 34, 34);
+$gray-2: rgb(119, 119, 122);
+$gray-3: rgb(153, 153, 154);
+$gray-4: rgb(179, 178, 177);
+
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+
+/********* PRIMARY ***********/
+$accent-primary: rgb(0, 64, 221);
+$accent-primary-alt: rgb(0, 74, 151);
+$secondary: rgb(38, 202, 211);
+$secondary-1: rgb(0, 153, 168);
+
+/********* DARK ***********/
+$dark-1: $black;
+$dark-2: rgb(17, 24, 39);
+$dark-3: rgb(119, 119, 122);
+$dark-4: rgb(203, 203, 203);
+
+/********* LIGHT ***********/
+$light-1: $white;
+$light-2: rgb(244, 244, 244);
+$light-3: rgb(245, 245, 251);
+$light-4: rgb(238, 238, 240);
+
+/********* ACCENT ALTERNATES ***********/
+$alternate-Accent-1: rgb(15, 99, 214);
+$alternate-Accent-2: rgb(0, 147, 201);
+$alternate-Accent-3: rgb(0, 155, 222);
+$alternate-Accent-4: rgb(238, 244, 250);
+
+/********* STATUS ***********/
+$error: rgb(142, 0, 0);
+$error-alt: rgb(221, 34, 37);
+$warning: rgb(122, 89, 0);
+$success: rgb(0, 116, 0);
+
+// Assigning color to element
+$body-bg: $white;
+$main-content-bg: $light-3;
+$error: $error;
+$success: $success;
+$warning: $warning;
+
+// Navigation
+$nav-bg: $white;
+$nav-text-inactive: $accent-primary;
+$nav-text-active: $accent-primary;
+$nav-link-active-bg: rgba($accent-primary, 0.15);
+$nav-link-active-highlight: $accent-primary;
+$nav-right-border: $dark-4;
+
+// Input
+$button-primary-text: $white;
+$button-primary-background: $accent-primary;
+$button-primary-hover-background: $alternate-Accent-1;
+$button-primary-active-background: $accent-primary-alt;
+
+$button-secondary-text: $dark-2;
+$button-secondary-background: $white;
+$button-secondary-border: $dark-2;
+$button-secondary-hover-textColor: $alternate-Accent-1;
+$button-secondary-active-textColor: $accent-primary;
+$button-secondary-active-border: $accent-primary;
+
+$button-error-text: $white;
+$button-error-background: $error;
+$button-error-hover-background: $error-alt;
+
+$button-error-active-textColor: $accent-primary;
+$button-error-active-border: $accent-primary;
+
+$text-link-text: $accent-primary;
+

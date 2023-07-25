@@ -1,0 +1,13 @@
+// Create or remove breakpoints for your project
+// Syntax:
+// name SIZErem,
+
+@use "sass:list";
+
+$screen-breakpoints: sm 576px 540px,
+md 768px 720px,
+lg 992px 960px,
+xl 1200px 1440px !default;
+
+
+// @debug list.nth($screen-breakpoints, 1);

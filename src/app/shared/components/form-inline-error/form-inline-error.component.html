@@ -1,0 +1,12 @@
+<div *ngIf="isSubmitted && errorControlName?.errors" class="text--error">
+    <span class="material-icons">error</span>
+    <ng-container *ngIf="errorControlName?.errors?.['required']">{{messageConfig?.required}}</ng-container>
+</div>
+
+<div *ngIf="error && !isEmpty" class="text--error">
+    <span class="material-icons">error</span>
+    <ng-container>{{error}}</ng-container>
+</div>
+<div *ngIf="errors && errors.length > 0 && !isEmpty" class="text__error">
+    <ng-container *ngFor="let error of errors"><span class="material-icons">error</span>{{error}}<br/></ng-container>
+</div>

@@ -1,0 +1,64 @@
+input[type='radio'] {
+  position: absolute !important;
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+
+  & + label {
+    display: inline-block;
+    position: relative;
+    padding: 0 1.5rem 0 0;
+    cursor: pointer;
+    //line-height: 2.75rem;
+
+    &::before {
+      content: '';
+      //   position: relative;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: $white;
+      border: 1px solid $dark-2;
+      @include border-radius(50%);
+    }
+  }
+
+  &:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 29%;
+    left: 8%;
+    border-radius: 50%;
+    width: 0.75rem;
+    height: 0.75rem;
+    background: $accent-primary;
+  }
+
+  &:focus + label::before {
+    outline: $accent-primary solid 2px;
+  }
+
+  &:disabled + label {
+    border-color: $dark-2;
+
+    &::before {
+      background: $light-4;
+    }
+
+    &::after {
+      color: $dark-3;
+    }
+  }
+}
+
+// input[type='checkbox']:checked + label::before {
+//   background: #5ac5c9;
+// }
+
+

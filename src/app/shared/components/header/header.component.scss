@@ -1,0 +1,109 @@
+@import "@collab/comp-library/style/settings/color";
+@import "@collab/comp-library/style/mixins/common";
+
+
+
+.container__header {
+  .header__controls--wrapper {
+    li {
+      margin-right: 20px;
+    }
+  }
+}
+
+.account_menu ul ul {
+  // display: none;
+}
+
+.account_menu ul li:hover > ul {
+  display: block;
+}
+.account_menu ul {
+  list-style: none;
+  position: relative;
+  justify-content: end;
+}
+
+.account_menu > ul > li {
+  flex: 0 1 auto;
+  margin-right: 20px;
+}
+
+.account_menu > ul ul {
+  background: #ffff;
+  border-radius: 0px;
+  position: absolute;
+  top: 28px;
+  right: 22px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.account_menu ul ul li {
+  color: $gray-1;
+  font-size: 14px;
+  padding: 15px 40px;
+  cursor: pointer;
+}
+
+.account_menu ul ul li:hover {
+  background: $accent-primary;
+  padding: 15px 40px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.account_menu ul ul li:nth-child(2):hover {
+  color: $white;
+}
+
+.account_menu ul ul:before {
+  content: "";
+  border: 10px solid transparent;
+  border-bottom-color: $white;
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+
+.account_menu ul ul li:first-child:hover {
+  background: transparent;
+  cursor: default;
+}
+
+.menu-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: $white;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-dropdown {
+  background-color: $light-1 !important;
+  z-index: 100;
+
+  li {
+    text-align: center;
+  }
+
+  li:nth-child(2) {
+    border-top: 1px solid #00000082;
+  }
+}
+
+
+.icon-color-white {
+  color: $white;
+}
+
+.header-bg-blue {
+  background-color: #000212;
+}
+
+.header__logo img {
+  width: 235px;
+  height: 45px;
+}

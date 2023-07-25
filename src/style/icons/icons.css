@@ -1,0 +1,572 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ymgq9q');
+  src:  url('fonts/icomoon.eot?ymgq9q#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?ymgq9q') format('truetype'),
+  url('fonts/icomoon.woff?ymgq9q') format('woff'),
+  url('fonts/icomoon.svg?ymgq9q#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: inherit;
+    display: block;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-size: 1.5rem;
+}
+
+.icon-disable {
+    filter: opacity(25%);
+    cursor: not-allowed;
+}
+
+.icon-enable {
+    cursor: pointer;
+}
+
+.icon-Prev_Active:before {
+  content: "\e992";
+  color: #0040dd;
+}
+.icon-Prev_Inactive:before {
+  content: "\e993";
+  color: #cbcbcb;
+}
+.icon-Next_Active:before {
+  content: "\e994";
+  color: #0040dd;
+}
+.icon-Next_Inactive:before {
+  content: "\e995";
+  color: #cbcbcb;
+}
+.icon-First_Active:before {
+  content: "\e996";
+  color: #0040dd;
+}
+.icon-First_Inactive:before {
+  content: "\e997";
+  color: #cbcbcb;
+}
+.icon-Last_Active:before {
+  content: "\e998";
+  color: #0040dd;
+}
+.icon-Last_Inactive:before {
+  content: "\e999";
+  color: #cbcbcb;
+}
+.icon-Sidebar-Collapse:before {
+  content: "\e99a";
+}
+.icon-Sidebar-Expand:before {
+  content: "\e99b";
+}
+.icon-Compliance1:before {
+  content: "\e97b";
+}
+.icon-Dashboard1:before {
+  content: "\e97c";
+}
+.icon-Design1:before {
+  content: "\e97d";
+}
+.icon-Developer1:before {
+  content: "\e97e";
+}
+.icon-Document-Scan1:before {
+  content: "\e97f";
+}
+.icon-History1:before {
+  content: "\e980";
+}
+.icon-Plugin1:before {
+  content: "\e981";
+}
+.icon-Web-Scan1:before {
+  content: "\e982";
+}
+.icon-Reports:before {
+  content: "\e983";
+}
+.icon-Requirements:before {
+  content: "\e984";
+}
+.icon-Test-Data-Management:before {
+  content: "\e985";
+}
+.icon-Test-Design:before {
+  content: "\e986";
+}
+.icon-Test-Execution:before {
+  content: "\e987";
+}
+.icon-Test-Optimization:before {
+  content: "\e988";
+}
+.icon-Test-Repository:before {
+  content: "\e989";
+}
+.icon-Error:before {
+  content: "\e98a";
+}
+.icon-Help:before {
+  content: "\e98b";
+}
+.icon-Null:before {
+  content: "\e98c";
+}
+.icon-Queue:before {
+  content: "\e98d";
+}
+.icon-Ready:before {
+  content: "\e98e";
+}
+.icon-Running:before {
+  content: "\e98f";
+}
+.icon-Success:before {
+  content: "\e990";
+}
+.icon-Warning:before {
+  content: "\e991";
+}
+.icon-AVA_ADE_Accent .path1:before {
+  content: "\e900";
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_ADE_Accent .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(0, 64, 221);
+}
+.icon-AVA_ADE_Accent .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_ADE_Accent .path4:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_ADE_Accent .path5:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_ADE_Accent .path6:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_ADE_Accent .path7:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_Avaluation_Accent .path1:before {
+  content: "\e907";
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_Avaluation_Accent .path2:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_Avaluation_Accent .path3:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_Avaluation_Accent .path4:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_Avaluation_Accent .path5:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(0, 64, 221);
+}
+.icon-AVA_Avaluation_Accent .path6:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_IAF_Accent .path1:before {
+  content: "\e90d";
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_IAF_Accent .path2:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(0, 64, 221);
+}
+.icon-AVA_IAF_Accent .path3:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_IAF_Accent .path4:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-Ava_Ice_Acccent .path1:before {
+  content: "\e911";
+  color: rgb(0, 64, 221);
+}
+.icon-Ava_Ice_Acccent .path2:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-Ava_Ice_Acccent .path3:before {
+  content: "\e913";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_ITA_Accent .path1:before {
+  content: "\e914";
+  color: rgb(0, 64, 221);
+}
+.icon-AVA_ITA_Accent .path2:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_ITA_Accent .path3:before {
+  content: "\e916";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_MLOps_Accent .path1:before {
+  content: "\e917";
+  color: rgb(0, 64, 221);
+}
+.icon-AVA_MLOps_Accent .path2:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_MLOps_Accent .path3:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_OneView_Accent .path1:before {
+  content: "\e91a";
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_OneView_Accent .path2:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-AVA_OneView_Accent .path3:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(0, 64, 221);
+}
+.icon-AVA_OneView_Accent .path4:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(0, 198, 255);
+}
+.icon-Compliance:before {
+  content: "\e91e";
+}
+.icon-Dashboard:before {
+  content: "\e91f";
+}
+.icon-Design:before {
+  content: "\e920";
+}
+.icon-Developer:before {
+  content: "\e921";
+}
+.icon-Document-Scan:before {
+  content: "\e922";
+}
+.icon-History:before {
+  content: "\e923";
+}
+.icon-Plugin:before {
+  content: "\e924";
+}
+.icon-Web-Scan:before {
+  content: "\e925";
+}
+.icon-Add:before {
+  content: "\e926";
+}
+.icon-Arrow-Down:before {
+  content: "\e927";
+}
+.icon-Arrow-Left:before {
+  content: "\e928";
+}
+.icon-Arrow-Right:before {
+  content: "\e929";
+}
+.icon-Arrow-Up:before {
+  content: "\e92a";
+}
+.icon-Business:before {
+  content: "\e92b";
+}
+.icon-Chev-Down:before {
+  content: "\e92c";
+}
+.icon-Chev-Left:before {
+  content: "\e92d";
+}
+.icon-Chev-Right:before {
+  content: "\e92e";
+}
+.icon-Chev-Up:before {
+  content: "\e92f";
+}
+.icon-Chevs-Down:before {
+  content: "\e930";
+}
+.icon-Chevs-Left:before {
+  content: "\e931";
+}
+.icon-Chevs-Right:before {
+  content: "\e932";
+}
+.icon-Chevs-Up:before {
+  content: "\e933";
+}
+.icon-Clone:before {
+  content: "\e934";
+}
+.icon-Close:before {
+  content: "\e935";
+}
+.icon-Context-Menu:before {
+  content: "\e936";
+}
+.icon-Copy:before {
+  content: "\e937";
+}
+.icon-Critical:before {
+  content: "\e938";
+}
+.icon-Cursor:before {
+  content: "\e939";
+}
+.icon-Delete:before {
+  content: "\e93a";
+}
+.icon-Disiked:before {
+  content: "\e93b";
+}
+.icon-Dislike:before {
+  content: "\e93c";
+}
+.icon-Document:before {
+  content: "\e93d";
+}
+.icon-Download:before {
+  content: "\e93e";
+}
+.icon-Drag:before {
+  content: "\e93f";
+}
+.icon-Duplicate:before {
+  content: "\e940";
+}
+.icon-Edit:before {
+  content: "\e941";
+}
+.icon-File:before {
+  content: "\e942";
+}
+.icon-Filter:before {
+  content: "\e943";
+}
+.icon-Import:before {
+  content: "\e944";
+}
+.icon-Like:before {
+  content: "\e945";
+}
+.icon-Liked:before {
+  content: "\e946";
+}
+.icon-Link:before {
+  content: "\e947";
+}
+.icon-List:before {
+  content: "\e948";
+}
+.icon-Loading:before {
+  content: "\e949";
+}
+.icon-mail:before {
+  content: "\e94a";
+}
+.icon-Menu:before {
+  content: "\e94b";
+}
+.icon-Milestone:before {
+  content: "\e94c";
+}
+.icon-Minor:before {
+  content: "\e94d";
+}
+.icon-Minus:before {
+  content: "\e94e";
+}
+.icon-Moderate:before {
+  content: "\e94f";
+}
+.icon-Notification:before {
+  content: "\e950";
+}
+.icon-Password-Off:before {
+  content: "\e951";
+}
+.icon-Pause:before {
+  content: "\e952";
+}
+.icon-Play:before {
+  content: "\e953";
+}
+.icon-Plus_Filled:before {
+  content: "\e954";
+}
+.icon-Plus:before {
+  content: "\e955";
+}
+.icon-Recommend:before {
+  content: "\e956";
+}
+.icon-Remove:before {
+  content: "\e957";
+}
+.icon-Reorder:before {
+  content: "\e958";
+}
+.icon-Reset:before {
+  content: "\e959";
+}
+.icon-Run:before {
+  content: "\e95a";
+}
+.icon-Search:before {
+  content: "\e95b";
+}
+.icon-Serious:before {
+  content: "\e95c";
+}
+.icon-Settings:before {
+  content: "\e95d";
+}
+.icon-Stop:before {
+  content: "\e95e";
+}
+.icon-Submit-Document:before {
+  content: "\e95f";
+}
+.icon-Upload:before {
+  content: "\e960";
+}
+.icon-User:before {
+  content: "\e961";
+}
+.icon-View:before {
+  content: "\e962";
+}
+.icon-IAF-1:before {
+  content: "\e963";
+}
+.icon-IAF:before {
+  content: "\e964";
+}
+.icon-Icon-1:before {
+  content: "\e965";
+}
+.icon-Icon-2:before {
+  content: "\e966";
+}
+.icon-Icon-3:before {
+  content: "\e967";
+}
+.icon-Icon-4:before {
+  content: "\e968";
+}
+.icon-Icon-5:before {
+  content: "\e969";
+}
+.icon-MLOps:before {
+  content: "\e96a";
+}
+.icon-OneView:before {
+  content: "\e96b";
+}
+.icon-Classification:before {
+  content: "\e96c";
+}
+.icon-Components:before {
+  content: "\e96d";
+}
+.icon-Continue:before {
+  content: "\e96e";
+}
+.icon-Modules:before {
+  content: "\e96f";
+}
+.icon-Review:before {
+  content: "\e970";
+}
+.icon-Test-Cases:before {
+  content: "\e971";
+}
+.icon-Total:before {
+  content: "\e972";
+}
+.icon-Accessible:before {
+  content: "\e973";
+}
+.icon-Audit:before {
+  content: "\e974";
+}
+.icon-Impact:before {
+  content: "\e975";
+}
+.icon-Language:before {
+  content: "\e976";
+}
+.icon-Remediation:before {
+  content: "\e977";
+}
+.icon-Request-History:before {
+  content: "\e978";
+}
+.icon-Rescan:before {
+  content: "\e979";
+}
+.icon-View-Document:before {
+  content: "\e97a";
+}

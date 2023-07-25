@@ -1,0 +1,66 @@
+@import './flexbox';
+
+// TODO :: This mixin needs to be depricated over time.
+@mixin container-layout($orientation, $justifyContent, $alignItems) {
+  @include flexbox;
+  @include flex-direction($orientation);
+  @include justify-content($justifyContent);
+  @include align-items($alignItems);
+
+  > * {
+    flex: 0 1 auto;
+  }
+
+  //@if $justifyContent==space-between or $justifyContent==space-around or $justifyContent==space-evenly {
+  //  > * {
+  //    flex: 1;
+  //  }
+  //} @else {
+  //  > * {
+  //    flex: 0 1 auto;
+  //  }
+  //}
+  }
+
+  // TODO :: This mixin will be used over time.
+  $containerRules: [
+  [row, space-between, center],
+  [row, space-between, flex-start],
+  [row, space-between, flex-end],
+  [row, flex-start, center],
+  [row, flex-start, flex-start],
+  [row, flex-start, flex-end],
+  [row, flex-end, center],
+  [row, flex-end, flex-start],
+  [row, flex-end, flex-end],
+];
+
+  @mixin flex-container-layout($orientation, $justifyContent, $alignItems) {
+    .container__#{$orientation}--#{$justifyContent}--#{$alignItems} {
+      display: flex;
+      flex-direction: #{$orientation};
+      justify-content: #{$justifyContent};
+      align-items: #{$alignItems};
+
+      > * {
+        flex: 0 1 auto;
+      }
+
+      //@if $justifyContent==space-between or $justifyContent==space-around or $justifyContent==space-evenly {
+      //  > * {
+      //    flex: 1;
+      //  }
+      //} @else {
+      //  > * {
+      //    flex: 0 1 auto;
+      //  }
+      //}
+      & > legend {
+        float: left;
+      }
+    }
+  }
+
+  @each $item in $containerRules {
+    @include flex-container-layout(nth($item, 1), nth($item, 2), nth($item, 3));
+  }

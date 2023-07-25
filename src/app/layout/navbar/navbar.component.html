@@ -1,0 +1,12 @@
+<collab-comp-img-generator class="nav__menu--toggle text--accent-primary" [fontClassName]="iconClassName" (click)="toggleSideNav()"></collab-comp-img-generator>
+<ul>
+  <ng-container *ngFor="let item of MenuItems">
+    <li *ngIf="item" [routerLinkActive]="'nav__linkItem--active'" class="nav__linkItem nav__linkItem--disabled"
+        [ngClass]="{ 'nav__linkItem--disabled': !item.isActive }">
+      <collab-comp-img-generator class="nav-icon" [imgUrl]="getUrl(item.icon)" altText="texticon" [fontClassName]="item.newIconName!"></collab-comp-img-generator>
+      <collab-comp-button type="link" class="nav__link--text" [linkConfig]="routeLinkConfig(item.label)" [isBtnDisbaled]="!item.isActive"
+        routerLink="{{item.path}}"></collab-comp-button>
+    </li>
+  </ng-container>
+</ul>
+

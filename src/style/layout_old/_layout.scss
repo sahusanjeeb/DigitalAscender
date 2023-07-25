@@ -1,0 +1,189 @@
+@import "../settings/_color.scss";
+@import "../mixins/flexbox";
+@import '../mixins/common';
+
+.container-layout__row {
+  @include flexbox;
+  @include flex-direction(row);
+}
+
+.container-layout__column {
+  @include flexbox;
+  @include flex-direction(column);
+}
+
+
+@mixin container-layout($orientation, $justifyContent, $alignContent) {
+  @include flexbox;
+  @include flex-direction($orientation);
+  @include justify-content($justifyContent);
+  @include align-items($alignContent);
+
+  @if $justifyContent==space-between or $justifyContent==space-around or $justifyContent==space-evenly {
+    > * {
+      @include flex(0 0 auto);
+    }
+  } @else {
+    > * {
+      @include flex(1);
+    }
+  }
+}
+
+%gutterOffset {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+body {
+  // background-color: #f7f7fa;
+  background-color: $white;
+}
+
+footer {
+  padding: 20px 0;
+  font-size: 0.5em;
+  text-align: center;
+  @extend %gutterOffset;
+
+}
+
+nav {
+  background-color: $nav-bg;
+  padding: 10px 4px;
+  @include border-radius(4px);
+  @include flexbox;
+  @include flex-direction(column);
+
+  app-img-generator.nav__menu--toggle {
+    align-self: flex-end;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.container {
+  @include flexbox;
+  @include flex-direction(column);
+  min-height: 100vh;
+  // background-color: $white;
+
+  &__headerWrapper {
+    @extend %gutterOffset;
+  }
+
+  &__mainContent {
+    margin-left: 10px;
+    background-color: $body-bg;
+    //padding: 48px 15px 48px 30px;
+
+    &--body {
+      @include flexbox;
+      @include flex-direction(column);
+      margin-top: 10px;
+      padding: 48px 15px 48px 30px;
+      height: calc(100% - 65px);
+
+      & > :first-child {
+        flex: 1;
+      }
+    }
+
+    &--multiCol {
+      //@include container-layout(row);
+    }
+
+    &--heading {
+      @include container-layout(row, space-between, center);
+      @include border-radius(4px);
+      padding: 10px;
+      background-color: $heading-h1;
+    }
+
+    h1 {
+      color: $white;
+      font-size: 24px;
+    }
+
+    &Wrapper {
+      flex: 1;
+      @extend %gutterOffset;
+      @include flexbox;
+      @include flex-direction(row);
+
+      > * {
+        flex: 1;
+      }
+
+      nav {
+        @include flex(0 0 200px);
+        @include transition(all, 0.15s);
+      }
+
+      nav.collapsed {
+        @include flex(0 0 50px);
+        @include transition(all, 0.15s);
+        //transition: all 0.15s;
+
+        .nav__link--text {
+          display: none;
+        }
+      }
+    }
+
+    &--background {
+      background-color: $bodyPanel-BG;
+      padding: 7px 10px 20px 10px;
+      @include border-radius(4px);
+
+      h2 {
+        //padding: 10px;
+        //background-color: $themeColor-highlight;
+        // color: $white;
+        font-size: 18px;
+        @include border-radius(4px);
+      }
+    }
+
+    &--columnLeft {
+      margin-right: 10px;
+    }
+  }
+
+  &__header {
+    @include container-layout(row, space-between, center);
+    // @include flexbox;
+    // @include flex-direction(row);
+    // @include justify-content(space-between);
+    // @include flex(1);
+    // @include align-items(center);
+    padding: 10px 20px;
+
+    .header__logo {
+      width: 75px;
+      height: auto;
+    }
+
+    .header__user {
+    }
+
+    .header__notification {
+    }
+
+  }
+
+  &--fileUpload__wrapper {
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(space-around);
+    padding: 20px 0;
+
+    > * {
+      flex: 1;
+    }
+  }
+}

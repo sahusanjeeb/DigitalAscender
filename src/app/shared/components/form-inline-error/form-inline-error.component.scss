@@ -1,0 +1,13 @@
+@import "@collab/comp-library/style/settings/color";
+
+
+.material-icons{
+  font-size: 15px;
+  color: $error;
+  transform: translate(0px, 1px);
+  margin-right: 4px;
+}
+.text--error{
+  color: $error;
+  margin-top: 8px;
+}

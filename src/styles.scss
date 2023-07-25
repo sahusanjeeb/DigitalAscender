@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "./style/settings/grid";
+@import "./style/base";
+@import "@collab/comp-library/style/icons/icons.css";
+@import "@collab/comp-library/style/inputs/formfields";
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $dark-4;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $dark-4;
+}
+
+

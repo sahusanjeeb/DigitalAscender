@@ -1,0 +1,139 @@
+// @import 'src/style/settings/tabs';
+@import "@collab/comp-library/style/settings/color";
+@import "@collab/comp-library/style/settings/fonts";
+@import "@collab/comp-library/style/settings/grid";
+@import "@collab/comp-library/style/settings/screenBreakpoints";
+@import "@collab/comp-library/style/mixins/spacing";
+
+
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: $font-regular, $font-fallback;
+  color: $gray-1;
+}
+
+@import '@collab/comp-library/style/text/text';
+@import '../style/settings/modal';
+@import '../style/settings/grid';
+@import '../style/settings/layout';
+
+body {
+  // background-color: #f7f7fa;
+  background-color: $body-bg;
+}
+
+nav {
+  background-color: $nav-bg;
+  @include box-shadow(-2px, 0, 0, rgba($nav-right-border, 0.5), true);
+  //padding: 10px 4px;
+  //@include border-radius(4px);
+}
+
+
+ol, ul, dl {
+  display: flex;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+
+  > * {
+    @include flex(1 1 auto);
+    //flex: 1;
+  }
+}
+
+.visually-hidden, .sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 0.1em;
+  width: 0.1em;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.disable {
+  pointer-events: none;
+  cursor: default;
+  color: rgba($dark-3, 0.5) !important;
+  border-color: rgba($dark-3, 0.5) !important;
+}
+
+.required:before,
+.select-project:before,
+.formGroup__title:before {
+  content:" *";
+  color: $error;
+  margin-right: 4px;
+}

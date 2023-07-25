@@ -1,0 +1,199 @@
+// @import "../inputs/button";
+@import "@collab/comp-library/style/mixins/flexbox";
+@import '@collab/comp-library/style/mixins/common';
+@import "@collab/comp-library/style/settings/color";
+
+/* MODAL STYLES
+-------------------------------*/
+app-modal,
+collab-comp-timeout {
+    /* modals are hidden by default */
+    display: none;
+
+    .modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 30%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        /* enables scrolling for tall modals */
+        overflow: auto;
+
+        @include flex-direction(row);
+
+        .modal-body {
+            padding: 20px;
+            text-align: center;
+            /* margin exposes part of the modal background */
+            margin: 0 auto;
+            width: 635px;
+
+            .modal-title-container {
+
+                display: flex;
+                justify-content: space-between;
+                background-color: $accent-primary-alt;
+                padding: 10px;
+
+                .modal-first {
+                    flex-wrap: wrap;
+                    display: flex;
+                    gap: 20px;
+                }
+
+                .modal-title {
+                    color: $white;
+                    margin-bottom: 0px;
+                }
+
+                .close-modal {
+                    cursor: pointer;
+                }
+            }
+
+            .modal-container {
+                float: left;
+                background: $white;
+                padding: 24px;
+                width: 100%;
+            }
+
+            .modal-footer {
+                margin-top: 16px;
+            }
+
+            .buttons-container {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    .modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* semi-transparent black  */
+        background-color: $black;
+        opacity: 0.75;
+
+        /* z-index must be below .modal and above everything else  */
+        z-index: 900;
+    }
+}
+
+body.modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}
+
+
+/* MODAL STYLES
+-------------------------------*/
+collab-comp-modal,
+app-modal {
+    /* modals are hidden by default */
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+    .modal-wrapper {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .modal {
+            position: static;
+            z-index: 1000;
+            max-width: 80%;
+            max-height: 80%;
+
+            @include flex-direction(row);
+
+            .modal-body {
+                display: block;
+                padding: 24px;
+                border-radius: 4px;
+                box-sizing: border-box;
+                outline: 0;
+                width: 675px;
+                height: 100%;
+                min-height: inherit;
+                max-height: inherit;
+
+                .modal-title-container {
+                    flex-wrap: wrap;
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: $accent-primary-alt;
+                    padding: 15px;
+
+                    .modal-first {
+                        flex-wrap: wrap;
+                        display: flex;
+                        gap: 20px;
+                    }
+
+                    .modal-title {
+                        color: $white;
+                        margin-bottom: 0px;
+                    }
+                }
+
+                .modal-container {
+                    float: left;
+                    background: $white;
+                    padding: 24px;
+                    width: 100%;
+
+                    display: block;
+                    max-height: 65vh;
+                    overflow: auto;
+                    max-width: -webkit-fill-available;
+                }
+
+                .modal-footer {
+                    margin-top: 16px;
+                    background-color: $gray-dark;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .buttons-container {
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+
+    .modal-background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $black;
+        opacity: 0.75;
+        z-index: 900;
+    }
+}
+
+.initializerModal .modal-wrapper .modal .modal-body {
+    width: 1022px;
+    
+}
+

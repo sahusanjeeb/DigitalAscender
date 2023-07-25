@@ -1,0 +1,40 @@
+/*
+ * Font initialization
+ */
+$i: 0;
+$font-regular: Avenir-Book;
+$font-fallback: Helvetica, Arial, sans-serif;
+$font-heavy: Avenir-Heavy;
+
+//* creating font map *//
+
+$ava-font-map: (
+        'h1': 2.5rem,
+        'h2': 2.25rem,
+        'h3': 2rem,
+        'h4': 1.75rem,
+        'h5': 1.5rem,
+        'h6': 1.25rem,
+        'body': 1rem,
+        'body--large': 2.5rem,
+        'body--xlarge': 3rem,
+        'body--small': 14px,
+        'button': 14px,
+        'none': 0
+);
+
+
+$colors: (accent-primary-alt: $accent-primary-alt,
+        accent-primary: $accent-primary,
+        alternate-Accent-1: $alternate-Accent-1,
+        error: $error,
+        success: $success);
+
+
+$textWeight: (bold: 800,
+        regular: 300);
+
+//$textSize: (large: 24px,
+//        medium: 20px,
+//        regular: 16px
+//);

@@ -1,0 +1,31 @@
+$max: 3; // Max number of spacing needs to be generated
+$offset: .25; // Spacing to multiply the sizes by
+$unit: 'rem'; // Feel free to change the unit.
+
+@mixin generate($prefix, $property) {
+
+  $i: 0;
+
+  @while $i <= $max {
+    $x: (1*$i)*100;
+    .#{$prefix}--#{$x} {
+      #{$property}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+$rules: [
+  [margin__left, margin-left],
+  [margin__top, margin-top],
+  [margin__right, margin-right],
+  [margin__bottom, margin-bottom],
+  [padding__left, padding-left],
+  [padding__top, padding-top],
+  [padding__right, padding-right],
+  [padding__bottom, padding-bottom],
+];
+
+@each $item in $rules {
+  @include generate(nth($item, 1), nth($item, 2));
+}
